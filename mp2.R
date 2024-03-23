@@ -2,13 +2,13 @@
 # STA 4163
 # Mini project 2, Dataset 1: Wage
 
-setwd("C:\\Users\\Theco\\OneDrive\\Desktop\\school\\stats\\mini-project-2")
+library("readxl")
 
 # Auxiliary variables:
 Wage = read_excel("Wage.xlsx")
 df <- data.frame(Wage)
 wage_col <- Wage$wage
-health_ins_col <- Wage$health_ins
+edu_col <- Wage$education
 
 attach(df)
 
@@ -18,4 +18,5 @@ attach(df)
 # showing proving the population's normality:
 shapiro.test(wage_col)
 
-
+# Kruskal-Wallis H-test
+# kruskal.test(len~factor(dose),data=df)
